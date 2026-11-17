@@ -1,0 +1,13 @@
+{
+  "name": "Career Path",
+  "short_name": "Career Path",
+  "description": "A bright, offline-first career guide for South African learners.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fc",
+  "theme_color": "#1747e8",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

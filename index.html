@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1747e8">
+  <meta name="description" content="Explore South African career pathways, school subjects and bite-sized courses, even offline.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://generativelanguage.googleapis.com https://api.deepseek.com https://api.openai.com; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Career Path</title>
+</head>
+<body>
+  <div id="login-screen" class="login-screen" hidden>
+    <form id="login-form" class="login-card" novalidate>
+      <img class="login-logo" src="assets/icon.svg" alt="Career Path C-rocket">
+      <p class="eyebrow">YOUR NEXT CHAPTER</p>
+      <h1 data-i18n="welcome">Big dreams start with one small step.</h1>
+      <p class="muted" data-i18n="loginNote">A private, on-this-device demo profile. No online account needed.</p>
+      <label for="login-email" data-i18n="email">Email address</label>
+      <input id="login-email" type="email" autocomplete="email" required maxlength="254">
+      <label for="login-password" data-i18n="password">Password (8+ characters)</label>
+      <input id="login-password" type="password" autocomplete="new-password" minlength="8" required>
+      <p id="login-error" class="form-error" aria-live="polite"></p>
+      <button class="button button-primary full-width" type="submit" data-i18n="continue">Start exploring</button>
+      <p class="fine-print" data-i18n="passwordNote">Your password is only checked here and is never saved.</p>
+    </form>
+  </div>
+
+  <div id="app-shell" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="Career Path home">
+        <img src="assets/icon.svg" alt=""><span>Career<span class="brand-accent">Path</span></span>
+      </a>
+      <p class="sidebar-caption" data-i18n="discover">DISCOVER YOUR FUTURE</p>
+      <nav id="side-nav" class="side-nav" aria-label="Main navigation"></nav>
+      <div class="sidebar-note"><span class="offline-dot"></span><span data-i18n="offlineReady">Your career guide works offline</span></div>
+      <button id="profile-button" class="profile-button" type="button"></button>
+    </aside>
+    <main class="main-column">
+      <header class="topbar">
+        <button id="mobile-brand" class="mobile-brand" type="button" aria-label="Go to home">
+          <img src="assets/icon.svg" alt=""> <span>Career<span class="brand-accent">Path</span></span>
+        </button>
+        <div class="topbar-greeting"><span class="eyebrow" data-i18n="littleSteps">LITTLE STEPS, BIG FUTURES</span><strong id="greeting"></strong></div>
+        <button id="top-profile" class="avatar" type="button" aria-label="Open settings"></button>
+      </header>
+      <section id="view" class="view" tabindex="-1"></section>
+    </main>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Main navigation"></nav>
+  </div>
+
+  <dialog id="career-dialog" class="career-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form>
+    <div id="career-detail"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

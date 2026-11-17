@@ -1,28 +1,24 @@
 # Career Path
 
-Career Path is a lightweight native Android career-exploration starter app for South African learners. It uses Java and Android framework APIs, targets Android 5.0 (API 21) and later, and has no third-party runtime dependencies.
+Career Path is a lightweight, mobile-first web app for exploring South African career options. It uses plain HTML, CSS and JavaScript with no application framework or external runtime dependencies. The installable PWA shell and 20-career guide are available offline after the first visit.
 
-## What is included
+## Run locally
 
-- Local, client-side sign-in validation and an encrypted on-device session. This preview does not create an online account or authenticate a real identity.
-- An offline SQLite catalog of 20 career starters, searchable by title, sector, description, school subjects and pathway.
-- Career overviews, example school subjects, possible study routes and clearly marked indicative salary ranges.
-- A followable sample expert feed with external profile links, a learning-history list and a subscription preview with no payment flow.
-- Dark/light appearance, localized core navigation/login/settings strings for English, isiZulu, isiXhosa, Afrikaans, Sepedi and Setswana, plus broader-language placeholders. Career catalog descriptions remain in English.
-- An opt-in AI career helper for Gemini, DeepSeek and OpenAI. The user confirms before each sanitized, HTTPS-only request; OAuth is not implemented.
+Serve this directory over `localhost` (service workers and Web Crypto require a secure context):
 
-## Build and run
-
-Open this directory in Android Studio and sync the Gradle project, then run the `app` configuration on an emulator or device. With Java 17, Android SDK Platform 35 and Gradle 8.9 or later available, build from the repository root:
-
-```text
-gradle :app:assembleDebug
+```powershell
+python -m http.server 8000
 ```
 
-The app's minimum SDK is API 21. The Android Gradle Plugin and Android SDK are build-time requirements; no application libraries are downloaded as runtime dependencies. See [SETUP.md](SETUP.md) for SDK requirements, provider limitations and security notes.
+Open `http://localhost:8000`. Or deploy the static files to a host with HTTPS. No build step or package install is required. See [SETUP.md](SETUP.md) for security and AI notes.
 
-## Offline and privacy notes
+## Features
 
-Career entries, saved learning history, appearance/language preferences and followed experts are stored locally. Profile email and any optional AI API key are encrypted using Android Keystore-backed encryption (AES-GCM on API 23+; a Keystore RSA-wrapped AES key on API 21–22). Passwords are validated but never retained. The app requests `INTERNET` only for the AI helper; it sends a prompt only after an explicit confirmation. Browser profile links are opened through Android's external `ACTION_VIEW` intent.
+- Private demo sign-in with immediate email/password validation; the password is cleared and never stored. The email lives only in the current browser tab. This is not a real account system.
+- A searchable, offline career catalogue with 20 illustrative jobs, sectors, school subject examples and possible study routes.
+- Responsive 2×2 career-sector cards, detail dialogs, a sample expert feed, locally saved follows, and LinkedIn/GitHub home-page links.
+- Bite-sized crash courses generated locally and saved on this browser, with active/complete history.
+- Dark and light themes, English/isiZulu/isiXhosa/Afrikaans/Sepedi/Setswana core navigation and sign-in labels.
+- Optional, explicitly confirmed AI questions for Gemini, DeepSeek or OpenAI using a user-provided API key. API keys are not OAuth.
 
-Career, salary and sector notes are illustrative educational content, not live labor-market statistics, vacancy data, financial advice or a guarantee of employment. Sample expert posts and identities are fictional and are not endorsements.
+All careers and pathways are starting points, not admissions requirements or live labour-market statistics. The illustrative expert posts are sample content, not verified endorsements.
