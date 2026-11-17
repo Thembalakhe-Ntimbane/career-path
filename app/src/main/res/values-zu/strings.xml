@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Career Path</string>
+    <string name="tagline">Ikusasa lakho liqala lapha</string>
+    <string name="login_title">Thola isinyathelo sakho esilandelayo</string>
+    <string name="login_subtitle">Hlola imisebenzi ehambisana namakhono akho.</string>
+    <string name="email_hint">Ikheli le-imeyili</string>
+    <string name="password_hint">Iphasiwedi (izinhlamvu ezingu-8+)</string>
+    <string name="login_action">Asihambe</string>
+    <string name="local_account_note">Iphrofayela yakho igcinwa kule divayisi. Lolu hlelo lokuhlola aludali i-akhawunti eku-inthanethi.</string>
+    <string name="home">Ekhaya</string>
+    <string name="explore">Hlola</string>
+    <string name="community">Xhumana</string>
+    <string name="settings">Izilungiselelo</string>
+    <string name="search_hint">Sesha imisebenzi, amakhono, izifundo…</string>
+    <string name="mode_light">Imodi ekhanyayo</string>
+    <string name="mode_dark">Imodi emnyama</string>
+</resources>
